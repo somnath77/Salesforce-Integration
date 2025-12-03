@@ -1,0 +1,40 @@
+<template>
+    <!--lightning-record-edit-form
+        object-api-name='Contact'
+        record-id={recordId}
+    >
+    <lightning-input-field field-name='MailingAddress'> </lightning-input-field>
+        <div class="slds-var-m-top_medium">
+            <lightning-button variant="brand" type="Submit" label="Validate" onclick={handleValidateAddress}>
+            </lightning-button>
+        </div>
+        <template if:true={showResult}>
+            <lightning-textarea value={result}></lightning-textarea>
+        </template>
+    </lightning-record-edit-form-->
+        <lightning-card title="Address Validation">
+            <div class="slds-m-around_small">
+                <lightning-input-address
+                    address-label="Address"
+                    street-label="Street"
+                    city-label="City"
+                    country-label="Country"
+                    province-label="State"
+                    postal-code-label="PostalCode"
+                    street={contact.street}
+                    city={contact.city}
+                    country={contact.country}
+                    province={contact.province}
+                    postal-code={contact.postalCode}
+                    field-level-help="Enter your billing address"
+                    onchange={handleFieldChange}
+                >
+                </lightning-input-address>
+                <lightning-button variant="brand" type="Submit" label="Validate" onclick={handleValidateAddress}>
+                </lightning-button>
+                <template if:true={showResult}>
+                    <lightning-textarea value={result}></lightning-textarea>
+                </template>
+            </div>
+        </lightning-card>
+</template>

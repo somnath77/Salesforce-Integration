@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Ask Gemini">
+        <lightning-input type="textarea" value={question} onchange={handleInputChange} placeholder="Ask anything..."></lightning-input>
+        <lightning-button label="Submit" onclick={handleClick}></lightning-button>
+        <template lwc:if={showResponse}>
+            <lightning-textarea value={response}></lightning-textarea>
+        </template>
+    </lightning-card>
+</template>
